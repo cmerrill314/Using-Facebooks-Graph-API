@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Setting Up and Using the API</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" /> 
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">CS290 How-To Guide <span>by CHRIS MERRILL</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="overview.html">Overview</a></li>
+					<li><a href="partOne.html">Setting Up and Using the API</a></li>
+					<li><a href="partTwo.html">Tracking Post Likes</a></li>
+					<li><a href="partThree.html">Identifying Participants</a></li>
+					<li><a href="partFour.html">Determining Eligibility</a></li>
+					<li><a href="partFive.html">Declaring A Winner</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+			<!-- Section -->
+				<section class="wrapper">
+					<div class="inner">
+						<header class="align-center">
+							<h1>Part 1</h1>
+							<h4>Setting Up and Using Facebook's Graph API</h4>
+						</header>
+						<div class="flex flex-2">
+							<div class="col col2">
+								<h3>Documentation</h3>
+								<p>The Graph API documentation can be found <a href="https://developers.facebook.com/docs/graph-api"><font color="purple">here</font></a>.</p>
+								<p>The documentation contains a surplus of calls that can be used to retrieve Facebook data. There are many different SDKs (Software Development Kits) that can be used in conjunction with the Graph API, but this guide will use HTTP requests to get the job done.</p>
+								
+								<h3>Obtaining an Access Token</h3>
+								<p>For security and privacy reasons, Facebook requires that users obtain an access token if they want to use the API. YOU WILL NEED TO OBTAIN AN ACCESS TOKEN BEFORE USING THE API. The access tokens can be obtained at the Graph API Explorer <a href="https://developers.facebook.com/docs/graph-api"><font color="purple">(here)</font></a>. Start by clicking "Get Token" -> "Get User Access Token":</p>
+								<center><img src="images/accessToken.jpg" alt="" align=""/></center>
+								<p>Next it will ask you to login to Facebook:</p>
+								<center><img src="images/login.jpg" alt="" /></center>
+								<p>You will then have an opportunity to select any desired permissions:</p>
+								<center><img src="images/permissions.jpg" alt="" /></center>
+								<p>For our contest application, you can just copy the permissions shown above. Other applications may require additional permissions.</p>
+								<p>Next select "Get Token" again and click the page that you would like to promote with your contest:</p>
+								<center><img src="images/pageToken.jpg" alt="" /></center>
+								<p>This will provide us with an access token that is specific to our page rather than to our personal profile. Simply copy this access token for use within your contest application: </p>
+								<center><img src="images/token.jpg" alt="" /></center>
+								<p>(Note: These access tokens are temporary and will have to be renewed every hour or so)</p>
+								
+								<h3>Interacting With The Graph API</h3>
+								<p>Our application will pull data from the API using HTTP GET requests. The application will consist of an HTML form where the user can submit their access token, Post ID and Page ID. These values will be used to piece together the URL that will be used in the HTTP GET request:</p>
+								<center><iframe width="100%" height="300" src="http://jsfiddle.net/cmerrill314/L63n0s1L/embedded/js/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></center>
+								<p></p>
+								
+								<h3>Post ID's and Page ID's</h3>
+								<p>We will need to make use of post ID's and page ID's in our application. To obtain a post ID, go to your page, find your contest post and click the date:</p>
+								<center><img src="images/post.jpg" alt="" /></center>
+								<p>You will then be able to pull the Post ID from the URL:</p>
+								<center><img src="images/postID.jpg" alt="" /></center>
+								<p>To obtain your page ID, go to your page and click "About" in the left hand bar:</p>
+								<center><img src="images/pageID.jpg" alt="" /></center>
+								<p></p>
+								
+								<h3>Conclusion</h3>
+								<p>This page contains all of the necessary tools required to contruct your own Facebook contest application. Before moving forward, assure that you can do the following:</p>
+								<ul>
+									<li>Access the Graph API documentation</li>
+									<li>Obtain an API Acess Token from the Graph API Explorer</li>
+									<li>Find your contest Post ID</li>
+									<li>Find the page ID of the page you want to promote with your contest</li>
+								</ul>
+								
+								<a href="partTwo.html" class="button">Go to Part 2: Tracking Page Likes</a>
+							</div>
+							<div class="col col1 first">
+								<div class="image round fit">
+									<a href="generic.html" class="link"><img src="images/f.jpg" alt="" /></a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<footer id="footer">	
+				<center><p>This guide was created by Chris Merrill for CS290:Web Development at OSU <br>
+				The styling of the guide was downloaded from TEMPLATED and altered as needed <br>
+				The royalty free images used in this guide were obtained from both flaticon.com and pexels.com <br>
+				The code for HTTP requests was modeled after Justin Wolford's AJAX course materials and adjusted as needed for the project</p></center>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>

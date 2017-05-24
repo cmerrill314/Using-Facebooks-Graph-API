@@ -1,0 +1,28 @@
+<!-- by Christopher Merrill -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="script.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<div id="main">
+			<h1 class="header">Facebook Contest Application</h1>
+			<form class="form">
+				<label>Enter Contest Post ID:</label><input type="number" name="postID_input" id="postID"><br>
+				<label>Enter Page ID:</label><input type="number" name="pageID_input" id="pageID"><br>
+				<label>Enter API Access Token:</label><input type="text" name="access_token_input" id="token"><br>
+				<br>
+				<input type="submit" value="Run Contest" class="submit" id="submitForm">
+			</form>
+			<h2 class="header">Contest Results</h2>
+			<p>Number of Post Likes: <span id="likes"></span></p>
+			<p>Number of Eligible Participants: <span id="participants"></span></p>
+			<br>
+			<p>CONTEST WINNER: <span id="winner"></span></p>
+			<h2 class="header">Participants</h2>
+			<table id="results"></table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Overview</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">CS290 How-To Guide <span>by CHRIS MERRILL</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="overview.html">Overview</a></li>
+					<li><a href="partOne.html">Setting Up and Using the API</a></li>
+					<li><a href="partTwo.html">Tracking Post Likes</a></li>
+					<li><a href="partThree.html">Identifying Participants</a></li>
+					<li><a href="partFour.html">Determining Eligibility</a></li>
+					<li><a href="partFive.html">Declaring A Winner</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+			<!-- Section -->
+				<section class="wrapper">
+					<div class="inner">
+						<header class="align-center">
+							<h1>Overview</h1>
+						</header>
+						<div class="flex flex-2">
+							<div class="col col2">
+								<h3>Purpose</h3>
+								<p>The purpose of this guide is to outline how to use the Facebook Graph API to host a promotional Facebook contest. By “promotional contest”, we mean a something along the lines of:</p>
+								<ul>
+									<li>You make a post offering up some sort of prize</li>
+									<li>Users can then like your post to enter the contest</li>
+									<li>To become an eligible participant, the user must also like the page you are promoting</li>
+									<li>A random winner is chosen from the pool of eligible participants</li>
+								</ul>
+								<p>A web application that fully automates the process of hosting a Facebook contest was created using Facebook's Graph API and this guide walks through the steps of creating it.</p>
+								<h3>What is Facebook's Graph API?</h3>
+								<p>Contests are a great way to obtain likes on your Facebook page, but keeping track of all of the users who liked your post can be tedious. Lucky for us, Facebook has a useful tool for tracking post statistics known as Graph API. </p>
+								<p>The Facebook Graph API documentation can be accessed <a href="https://developers.facebook.com/docs/graph-api"><font color="purple">here</font></a>.</p>
+								<p>Facebook has a number of different API’s, but Graph API is tailored to access user, page and post data (which is exactly what we need to host our contest!). There are a number of ways the Graph API can be used in conjunction with Facebook’s numerous SDK’s (Software Development Kits), but this guide will show how to access the necessary data directly using AJAX requests.</p>
+								<h3>What is Involved?</h3>
+								<p>This guide consists of the following sections, and after going through each section you will have a working web application that can run a contest and declare a winner in seconds:</p>
+								<ul>
+									<li><a href="partOne.html"><font color="purple">Part 1: Setting Up and Using the API</font></a></li>
+									<li><a href="partTwo.html"><font color="purple">Part 2: Tracking Post Likes</font></a></li>
+									<li><a href="partThree.html"><font color="purple">Part 3: Identifying Participants</font></a></li>
+									<li><a href="partFour.html"><font color="purple">Part 4: Determining Eligibility</font></a></li>
+									<li><a href="partFive.html"><font color="purple">Part 5: Declaring A Winner</font></a></li>
+								</ul>
+								<a href="partOne.html" class="button">Get Started</a>
+							</div>
+							<div class="col col1 first">
+								<div class="image round fit">
+									<a href="generic.html" class="link"><img src="images/overview.jpg" alt="" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<footer id="footer">	
+				<center><p>This guide was created by Chris Merrill for CS290:Web Development at OSU <br>
+				The styling of the guide was downloaded from TEMPLATED and altered as needed <br>
+				The royalty free images used in this guide were obtained from both flaticon.com and pexels.com <br>
+				The code for HTTP requests was modeled after Justin Wolford's AJAX course materials and adjusted as needed for the project</p></center>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

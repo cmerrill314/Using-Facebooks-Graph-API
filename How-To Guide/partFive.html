@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Identifying Participants</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" /> 
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">CS290 How-To Guide <span>by CHRIS MERRILL</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="overview.html">Overview</a></li>
+					<li><a href="partOne.html">Setting Up and Using the API</a></li>
+					<li><a href="partTwo.html">Tracking Post Likes</a></li>
+					<li><a href="partThree.html">Identifying Participants</a></li>
+					<li><a href="partFour.html">Determining Eligibility</a></li>
+					<li><a href="partFive.html">Declaring A Winner</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+			<!-- Section -->
+				<section class="wrapper">
+					<div class="inner">
+						<header class="align-center">
+							<h1>Part Five</h1>
+							<h4>Declaring A Winner</h4>
+						</header>
+						<div class="flex flex-2">
+							<div class="col col2">
+								<h3>Purpose</h3>
+								<p>By now we have compiled a list of all eligible participants in our contest. Now it is simply a matter of choosing a winner. This section will outline the addition that needs to be made to our code to make this happen.</p>
+								
+								<h3>Displaying a Winner</h3>
+								<p>There is no need to make any additional API calls for this part. All we need to do is utilize a random number generator to randomly pick a name from our <font color="purple">"matches"</font> array. This can be done using <font color="purple">Math.floor(Math.random()*(matches.length))</font>. This line of code will choose a random integer between 0 and one less than the number of people in our <font color="purple">"matches"</font> array. We can then declare that the winner of the contest is the user whose index equals our random value!</p>
+								<p>The final version of our contest code, with the addition of the winner declaration, can be seen below:</p>
+								<center><iframe width="100%" height="300" src="http://jsfiddle.net/cmerrill314/e8xrg4c4/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></center>
+								<p>(Note: The "Result" tab in the above code is only to demonstrate the layout. The AJAX call won't work through JSFiddle, you must run the code through the browser)</p>
+								
+								<h3>The Final Product</h3>
+								<p>This will be the result of running the above code:</p>
+								<center><img src="images/results4.jpg" alt="" /></center>
+								<p>The user will be able to enter their own Post ID, Page ID and Access Token. After clicking "Submit", the number of participants/eligible particpants, list of participants AND the winner of the competition will be populated.</p>
+								<p>This concludes our guide on how to host an automated Facebook contest using the Graph API. To host your own contest you just need to make a contest post, then at the deadline enter in the Post ID, page ID and an access token to determine the winner! </p>
+								<a href="index.html" class="button">Return Home</a>
+							</div>
+							<div class="col col1 first">
+								<div class="image round fit">
+									<a href="generic.html" class="link"><img src="images/winner.jpg" alt="" /></a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<footer id="footer">	
+				<center><p>This guide was created by Chris Merrill for CS290:Web Development at OSU <br>
+				The styling of the guide was downloaded from TEMPLATED and altered as needed <br>
+				The royalty free images used in this guide were obtained from both flaticon.com and pexels.com <br>
+				The code for HTTP requests was modeled after Justin Wolford's AJAX course materials and adjusted as needed for the project</p></center>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>

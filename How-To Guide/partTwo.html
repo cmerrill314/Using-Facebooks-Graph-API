@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Tracking Post Likes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" /> 
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">CS290 How-To Guide <span>by CHRIS MERRILL</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="overview.html">Overview</a></li>
+					<li><a href="partOne.html">Setting Up and Using the API</a></li>
+					<li><a href="partTwo.html">Tracking Post Likes</a></li>
+					<li><a href="partThree.html">Identifying Participants</a></li>
+					<li><a href="partFour.html">Determining Eligibility</a></li>
+					<li><a href="partFive.html">Declaring A Winner</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+			<!-- Section -->
+				<section class="wrapper">
+					<div class="inner">
+						<header class="align-center">
+							<h1>Part Two</h1>
+							<h4>Tracking Post Likes</h4>
+						</header>
+						<div class="flex flex-2">
+							<div class="col col2">
+								<h3>Purpose</h3>
+								<p>In order to declare a winner of our contest, we need to know which users liked our post. At that point we can loop through each user to see if they are an eligible participant (a participant who liked BOTH your post and your page). In order to run this loop, we will need the total number of users who liked the post.</p>
+								<p>Sure you could always just look at the post on Facebook to see the number of likes, but that's no fun! It would also require you to manually transfer the number of likes to your JavaScript code, which is counter productive to our goal of automating a contest. Therefore we will utilize the Graph API to pull the number of likes our post recieved.</p>
+								
+								<h3>Making The API Call</h3>
+								<p>To determine the number of likes a post recieved, we will use the following GET request from the Graph API:</p>
+								<center><img src="images/facebook1.jpg" alt="" /></center>
+								<p>Here the <font color="purple">{object-id}</font> is refering to the Post ID (see Part 1 of this guide if you're unsure how to access the post ID). For our contest application, we'll want to allow the user to enter a post ID and their access token. That information will then be used to create a URL with the following form:</p>
+								<p>https://graph.facebook.com/v2.3/<font color="purple">{POST ID}</font>/likes?access_token=<font color="purple">{ACCESS TOKEN VALUE}</font></P>
+								<p>This URL will be sent as an HTTP GET request to the Graph API. The API will then return a data object that contains the name and ID of each user that liked your post. First we will parse the response, and then we can calculate the number of likes using <font color="purple">response.data.length</font>. Below is a working code sample that carries out these steps and wraps them in a function that executes when a "Submit" button is pressed:</p>
+								<center><iframe width="100%" height="600" src="http://jsfiddle.net/cmerrill314/3xsoy8hr/9/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></center>
+								<p>(Note: The "Result" tab in the above code is only to demonstrate the layout. The AJAX call won't work through JSFiddle, you must run the code through the browser)</p>
+								
+								<h3>The Final Product</h3>
+								<p>This will be the result of running the above code:</p>
+								<center><img src="images/results1.jpg" alt="" /></center>
+								<p>The user will be able to enter their own Post ID and Access Token. After clicking "Submit", the number of likes will be populated in the contest results section.</p>
+								<p>Once again, this isn't too exciting because we can access this info directly from our Facebook page. However it is a good introduction to making calls to the Graph API and we will continue to build on this code in future sections!</p>
+								<a href="partThree.html" class="button">Go to Part 3: Identifying Participants</a>
+							</div>
+							<div class="col col1 first">
+								<div class="image round fit">
+									<a href="generic.html" class="link"><img src="images/thumbsUp.jpg" alt="" /></a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<footer id="footer">	
+				<center><p>This guide was created by Chris Merrill for CS290:Web Development at OSU <br>
+				The styling of the guide was downloaded from TEMPLATED and altered as needed <br>
+				The royalty free images used in this guide were obtained from both flaticon.com and pexels.com <br>
+				The code for HTTP requests was modeled after Justin Wolford's AJAX course materials and adjusted as needed for the project</p></center>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>

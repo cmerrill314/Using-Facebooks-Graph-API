@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Identifying Participants</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" /> 
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">CS290 How-To Guide <span>by CHRIS MERRILL</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="overview.html">Overview</a></li>
+					<li><a href="partOne.html">Setting Up and Using the API</a></li>
+					<li><a href="partTwo.html">Tracking Post Likes</a></li>
+					<li><a href="partThree.html">Identifying Participants</a></li>
+					<li><a href="partFour.html">Determining Eligibility</a></li>
+					<li><a href="partFive.html">Declaring A Winner</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+			<!-- Section -->
+				<section class="wrapper">
+					<div class="inner">
+						<header class="align-center">
+							<h1>Part Three</h1>
+							<h4>Identifying Participants</h4>
+						</header>
+						<div class="flex flex-2">
+							<div class="col col2">
+								<h3>Purpose</h3>
+								<p>In Part 2 of this guide, we recieved the number of likes that our contest post recieved. On its own, this information is essentially useless. What we really want is the name and user ID of each user who liked the post, so that we can name a winner from the pool of participants. Now that we have the number of likes, we can utilize that value in a for-loop to display a comprehensive list of participants.
+								
+								<h3>How To Display A List Of Participants</h3>
+								<p>There is no need to perform a separate API call to perform this task. Instead we can update our existing API call to not only display <font color="purple">response.data.length</font>, but also print a list of participants names and ID's to the browser.</p>
+								<p>The data object sent back from the API is an array of users who liked our post, therefore we can access the name and id of a user using <font color="purple">response.data[n].name</font> and <font color="purple">response.data[n].id</font> respectively (where n denotes the user's position in the array). By looping through the entire array and displaying each name/ID as we go, we can create a comprehensive list of participants. The following code contains the addition of the for-loop:</p>
+								<center><iframe width="100%" height="300" src="http://jsfiddle.net/cmerrill314/9wbg9hvu/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe></center>
+								<p>(Note: The "Result" tab in the above code is only to demonstrate the layout. The AJAX call won't work through JSFiddle, you must run the code through the browser)</p>
+								
+								<h3>The Final Product</h3>
+								<p>This will be the result of running the above code:</p>
+								<center><img src="images/results2.jpg" alt="" /></center>
+								<p>The user will be able to enter their own Post ID and Access Token. After clicking "Submit", the number of likes will be populated as well as a list of users who liked the post.</p>
+								<p>Now that we have our list of participants we will want to check their contest eligibilty (eligible participants are users who liked both the post AND the page). This is outlined in Part 4</p>
+								<a href="partFour.html" class="button">Go to Part 4: Determining Eligibility</a>
+							</div>
+							<div class="col col1 first">
+								<div class="image round fit">
+									<a href="generic.html" class="link"><img src="images/friends.jpg" alt="" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<footer id="footer">	
+				<center><p>This guide was created by Chris Merrill for CS290:Web Development at OSU <br>
+				The styling of the guide was downloaded from TEMPLATED and altered as needed <br>
+				The royalty free images used in this guide were obtained from both flaticon.com and pexels.com <br>
+				The code for HTTP requests was modeled after Justin Wolford's AJAX course materials and adjusted as needed for the project</p></center>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
